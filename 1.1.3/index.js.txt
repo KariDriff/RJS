@@ -1,0 +1,48 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import './style.css';
+
+const element = "DIO";
+const element2 = <h1>Bom dia garai</h1>
+
+function App() {
+ return (
+  <div>
+   {element}
+   {element2}
+  </div>
+ );
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
+
+————————————————————————————————————————————————————
+
+import React from "react";
+import ReactDOM from "react-dom";
+import Button from "./Button";
+import ComponentA from "./ComponentA";
+import ComponentB from "./ComponentB";
+import "./style.css";
+
+function soma(a, b) {
+  alert(a + b)
+}
+
+const App = () => {
+  return (
+    <div className="App">
+      Hello World
+      <Button onClick={() => soma (10, 20)} name="Kaio Alberth"/>
+      <ComponentA>
+        <ComponentB>
+        <Button onClick={() => soma (40, 20)} name="Albert Einstein"/>
+        </ComponentB>
+      </ComponentA>
+    </div>
+  );
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
