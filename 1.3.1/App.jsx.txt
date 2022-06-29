@@ -1,0 +1,111 @@
+import React from "react";
+
+const buttonA = <button>Histórico</button>
+
+const hasCustomer = true;
+
+const App = () => {
+ return (
+  <div>
+   <p>DIO</p>
+   <p>Olá, welcome</p>
+
+   {hasCustomer && (   
+    <div>
+     Clique no botão abaixo para ver o histórico de clientes
+     <br />
+     {buttonA}
+    </div>
+   )}
+  </div>
+ );
+}
+
+export default App;
+
+————————————————————————————————————————————————
+
+import React from "react";
+
+const buttonA = <button>Histórico</button>
+
+const buttonB = <button>Cadastrar cliente</button>
+
+const hasCustomer = false
+
+const App = () => {
+ const renderShowHistory = () => {
+  <div>
+   Clique no botão abaixo para ver o histórico de clientes
+   <br />
+   {buttonA}
+  </div>  
+ }
+ const renderAddCustomer = () => {
+  <div>
+   Clique abaixo para cadastrar o cliente
+   <br />
+   {buttonB}
+  </div>
+ }
+
+ return (
+  <div>
+   <p>DIO</p>
+   <p>Olá, welcome</p>
+   {hasCustomer ? renderShowHistory() : renderAddCustomer()}
+  </div>
+ );
+};
+
+export default App;
+
+——————————————————————————————————————————————————
+
+import React from "react";
+
+const buttonA = <button>Histórico</button>
+
+const buttonB = <button>Cadastrar cliente</button>
+
+const hasCustomer = true
+
+const App = () => {
+ const renderShowHistory = () => {
+  <div>
+   Clique no botão abaixo para ver o histórico de clientes
+   <br />
+   {buttonA}
+  </div>  
+ }
+ const renderAddCustomer = () => {
+  <div>
+   Clique abaixo para cadastrar o cliente
+   <br />
+   {buttonB}
+  </div>
+ }
+
+ const showCustomer = () => {
+  if (!hasCustomer) return null
+
+  return (
+   <div>
+    <h1>Nome do cliente: Kaio Alberth</h1>
+   </div>
+  )
+ }
+
+ return (
+  <div>
+   <p>DIO</p>
+   <p>Olá, welcome</p>
+   {hasCustomer ? renderShowHistory() : renderAddCustomer()}
+   <div>
+    {showCustomer()}
+   </div>
+  </div>
+ );
+};
+
+export default App;
