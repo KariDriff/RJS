@@ -1,0 +1,51 @@
+import { useState, useEffect, useRef } from "react";
+import styled from "styled-components"
+import amogus from "../../images/Among Us Brasil Sticker 2.png"
+import { Quotes } from "../../components"
+import { getQuote } from "../../services"
+import sfx from "../../sounds/sound_dtrans_flip.ogg"
+
+const audio = new Audio(sfx);
+
+export function App() {
+ const isMounted = useRef(true);
+
+ const [quoteState, setQuoteState ] = useState({ quote: "Loading quote...", speaker: "Loading speaker..."});
+
+ const onUpdate = async () => {
+  const quote = await getQuote();
+
+  if (isMounted.current) {
+  audio.play();
+  setQuoteState(quote);
+  }
+ };
+
+ useEffect(() => {
+  onUpdate();
+
+  return () => {
+   isMounted.current = false;
+  }
+ }, []);
+
+ return (
+  <Content>
+   <Quotes 
+   {...quoteState} onUpdate={onUpdate} />
+   <Amogus src={amogus} alt="amogus" />
+  </Content>
+ );
+}
+
+const Content = styled.div`
+height: 100vh;
+margin: 0 50px;
+display: flex;
+justify-content: center;
+align-items: center;
+`;
+const Amogus = styled.img`
+ max-width: 50vw;
+ align-self: flex-end;
+`;

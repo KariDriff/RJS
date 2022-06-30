@@ -1,0 +1,48 @@
+import { rest } from "nsw";
+import { setupServer } from "nsw/node";
+import { render, screen, fireEvent } from "@testing-library/react"
+import { App } from "./App"
+import { click } from "@testing-library/user-event/dist/click";
+
+const response = { speaker: "Speaker", quote: "test quote" };
+
+const server = setupServer(
+ rest.get(process.env.REACT_APP_API, (req, res, ctx) => {
+  return res(ctx.json(response));
+ })
+);
+
+beforeAll(() => server.listen());
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());
+
+test("renders the app with a quote and a button", () => {
+ render(<App />);
+
+ const buttonEl = screen.getByRole("button")
+ const imageEl = screen.getByRole("img")
+ const textEl = screen.getByRole("p")
+
+ expect(buttonEl).toBeInTheDocument();
+ expect(imageEl).toBeInTheDocument();
+ expect(textEl).toBeInTheDocument();
+});
+
+teste("calls an api when button is clicked and update its text", async () => {
+ render (<App />);
+
+ const buttonEl = screen.getByRole("button");
+ fireEvent-click(buttonEl);
+
+ const quoteEl = await screen.findByText(response.quote);
+
+ expect(quoteEl).toBeInTheDocument();
+});
+
+test("calls an api on start and renders a response", async () => {
+ render(<App />);
+
+ const quoteEl = await screen.findByText(response.quote);
+
+ expect(quoteEl).toBeInTheDocument();
+});

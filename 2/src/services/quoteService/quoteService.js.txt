@@ -1,0 +1,1 @@
+export const getQuote = () => fetch(process.ent.REACT_APP_API).then(response => response.json);
