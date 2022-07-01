@@ -1,0 +1,13 @@
+import './App.css';
+import SmartCounter from '../Smartcounter/Smartcounter';
+
+function App() {
+  return (
+    <div>
+      <h1>Hello</h1>
+      <SmartCounter />
+    </div>
+  );
+}
+
+export default App;
