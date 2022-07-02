@@ -2,7 +2,7 @@
 Aqui estão os arquivos que fiz usando o RJS no módulo 4 do curso TQI.
 
 **Nota:**
-Os arquivos estão em txt. Motivo: a pasta "node_modules" custa +300 MB de conteúdo. E eu não sei importar essa pasta em cada pasta abaixo.
+Os arquivos estão em txt. Motivo: a pasta "node_modules" custa +300 MB de conteúdo. E eu não tive vontade de importá-la em cada aula.
 
 ## Conteúdos
 ### Aulas:
