@@ -1,0 +1,14 @@
+import { createContext } from "react"
+
+export const themes = {
+ primary: {
+  background: "white",
+  color: "gray"
+ },
+ secondary: {
+  background: "gray",
+  color: "white"
+ }
+}
+
+export const ThemeContext = createContext(themes.secondary)
