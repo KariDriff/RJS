@@ -2,7 +2,9 @@
 Aqui estão os arquivos que fiz usando o RJS no módulo 4 do curso TQI.
 
 **Nota:**
-Os arquivos estão em txt. Motivo: a pasta "node_modules" custa +300 MB de conteúdo. E eu não sei importar essa pasta em cada pasta abaixo.
+Os arquivos estão em txt. Motivo: a pasta "node_modules" custa +300 MB de conteúdo. E eu não tive vontade de importá-la em cada aula.
+
+**Exceção:** A aula 6 está completa porque é uma aula de projeto.
 
 ## Conteúdos
 ### Aulas:
@@ -25,3 +27,4 @@ Os arquivos estão em txt. Motivo: a pasta "node_modules" custa +300 MB de conte
 - [5.2.5](https://github.com/KariDriff/RJS/tree/main/5.2.5)
 - [5.3.2](https://github.com/KariDriff/RJS/tree/main/5.3.2)
 - [5.3.3](https://github.com/KariDriff/RJS/tree/main/5.3.3)
+- [6](https://github.com/KariDriff/RJS/tree/main/6)
